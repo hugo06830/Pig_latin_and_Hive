@@ -1,0 +1,176 @@
+-- Problem 3 LOAD Script - Exercise 2 - Group 8 - 2019/2020
+
+DROP TABLE IF EXISTS pr1;
+CREATE TABLE pr1 (subject STRING , object STRING, predicate STRING) ROW FORMAT DELIMITED FIELDS TERMINATED BY ' ' STORED AS TEXTFILE LOCATION './tables/predicates/pr1';
+INSERT INTO pr1 SELECT subject, object, predicate FROM yago WHERE predicate='<actedIn>' ;
+LOAD DATA LOCAL INPATH './tables/predicates/pr1' INTO TABLE yago_part_buck PARTITION (predicate='<actedIn>');
+DROP TABLE pr1;
+
+DROP TABLE IF EXISTS pr2;
+CREATE TABLE pr2 (subject STRING , object STRING, predicate STRING) ROW FORMAT DELIMITED FIELDS TERMINATED BY ' ' STORED AS TEXTFILE LOCATION './tables/predicates/pr2';
+INSERT INTO pr2 SELECT subject, object, predicate FROM yago WHERE predicate='<hasAcademicAdvisor>' ;
+LOAD DATA LOCAL INPATH './tables/predicates/pr2' INTO TABLE yago_part_buck PARTITION (predicate='<hasAcademicAdvisor>');
+DROP TABLE pr2;
+
+DROP TABLE IF EXISTS pr3;
+CREATE TABLE pr3 (subject STRING , object STRING, predicate STRING) ROW FORMAT DELIMITED FIELDS TERMINATED BY ' ' STORED AS TEXTFILE LOCATION './tables/predicates/pr3';
+INSERT INTO pr3 SELECT subject, object, predicate FROM yago WHERE predicate='<hasChild>' ;
+LOAD DATA LOCAL INPATH './tables/predicates/pr3' INTO TABLE yago_part_buck PARTITION (predicate='<hasChild>');
+DROP TABLE pr3;
+
+DROP TABLE IF EXISTS pr4;
+CREATE TABLE pr4 (subject STRING , object STRING, predicate STRING) ROW FORMAT DELIMITED FIELDS TERMINATED BY ' ' STORED AS TEXTFILE LOCATION './tables/predicates/pr4';
+INSERT INTO pr4 SELECT subject, object, predicate FROM yago WHERE predicate='<hasFamilyName>' ;
+LOAD DATA LOCAL INPATH './tables/predicates/pr4' INTO TABLE yago_part_buck PARTITION (predicate='<hasFamilyName>');
+DROP TABLE pr4;
+
+DROP TABLE IF EXISTS pr5;
+CREATE TABLE pr5 (subject STRING , object STRING, predicate STRING) ROW FORMAT DELIMITED FIELDS TERMINATED BY ' ' STORED AS TEXTFILE LOCATION './tables/predicates/pr5';
+INSERT INTO pr5 SELECT subject, object, predicate FROM yago WHERE predicate='<hasWebsite>' ;
+LOAD DATA LOCAL INPATH './tables/predicates/pr5' INTO TABLE yago_part_buck PARTITION (predicate='<hasWebsite>');
+DROP TABLE pr5;
+
+DROP TABLE IF EXISTS pr6;
+CREATE TABLE pr6 (subject STRING , object STRING, predicate STRING) ROW FORMAT DELIMITED FIELDS TERMINATED BY ' ' STORED AS TEXTFILE LOCATION './tables/predicates/pr6';
+INSERT INTO pr6 SELECT subject, object, predicate FROM yago WHERE predicate='<hasWonPrize>' ;
+LOAD DATA LOCAL INPATH './tables/predicates/pr6' INTO TABLE yago_part_buck PARTITION (predicate='<hasWonPrize>');
+DROP TABLE pr6;
+
+DROP TABLE IF EXISTS pr7;
+CREATE TABLE pr7 (subject STRING , object STRING, predicate STRING) ROW FORMAT DELIMITED FIELDS TERMINATED BY ' ' STORED AS TEXTFILE LOCATION './tables/predicates/pr7';
+INSERT INTO pr7 SELECT subject, object, predicate FROM yago WHERE predicate='<isInterestedIn>' ;
+LOAD DATA LOCAL INPATH './tables/predicates/pr7' INTO TABLE yago_part_buck PARTITION (predicate='<isInterestedIn>');
+DROP TABLE pr7;
+
+DROP TABLE IF EXISTS pr8;
+CREATE TABLE pr8 (subject STRING , object STRING, predicate STRING) ROW FORMAT DELIMITED FIELDS TERMINATED BY ' ' STORED AS TEXTFILE LOCATION './tables/predicates/pr8';
+INSERT INTO pr8 SELECT subject, object, predicate FROM yago WHERE predicate='<isKnownFor>' ;
+LOAD DATA LOCAL INPATH './tables/predicates/pr8' INTO TABLE yago_part_buck PARTITION (predicate='<isKnownFor>');
+DROP TABLE pr8;
+
+DROP TABLE IF EXISTS pr9;
+CREATE TABLE pr9 (subject STRING , object STRING, predicate STRING) ROW FORMAT DELIMITED FIELDS TERMINATED BY ' ' STORED AS TEXTFILE LOCATION './tables/predicates/pr9';
+INSERT INTO pr9 SELECT subject, object, predicate FROM yago WHERE predicate='<directed>' ;
+LOAD DATA LOCAL INPATH './tables/predicates/pr9' INTO TABLE yago_part_buck PARTITION (predicate='<directed>');
+DROP TABLE pr9;
+
+DROP TABLE IF EXISTS pr10;
+CREATE TABLE pr10 (subject STRING , object STRING, predicate STRING) ROW FORMAT DELIMITED FIELDS TERMINATED BY ' ' STORED AS TEXTFILE LOCATION './tables/predicates/pr10';
+INSERT INTO pr10 SELECT subject, object, predicate FROM yago WHERE predicate='<edited>' ;
+LOAD DATA LOCAL INPATH './tables/predicates/pr10' INTO TABLE yago_part_buck PARTITION (predicate='<edited>');
+DROP TABLE pr10;
+
+DROP TABLE IF EXISTS pr11;
+CREATE TABLE pr11 (subject STRING , object STRING, predicate STRING) ROW FORMAT DELIMITED FIELDS TERMINATED BY ' ' STORED AS TEXTFILE LOCATION './tables/predicates/pr11';
+INSERT INTO pr11 SELECT subject, object, predicate FROM yago WHERE predicate='<graduatedFrom>' ;
+LOAD DATA LOCAL INPATH './tables/predicates/pr11' INTO TABLE yago_part_buck PARTITION (predicate='<graduatedFrom>');
+DROP TABLE pr11;
+
+DROP TABLE IF EXISTS pr12;
+CREATE TABLE pr12 (subject STRING , object STRING, predicate STRING) ROW FORMAT DELIMITED FIELDS TERMINATED BY ' ' STORED AS TEXTFILE LOCATION './tables/predicates/pr12';
+INSERT INTO pr12 SELECT subject, object, predicate FROM yago WHERE predicate='<hasGender>' ;
+LOAD DATA LOCAL INPATH './tables/predicates/pr12' INTO TABLE yago_part_buck PARTITION (predicate='<hasGender>');
+DROP TABLE pr12;
+
+DROP TABLE IF EXISTS pr13;
+CREATE TABLE pr13 (subject STRING , object STRING, predicate STRING) ROW FORMAT DELIMITED FIELDS TERMINATED BY ' ' STORED AS TEXTFILE LOCATION './tables/predicates/pr13';
+INSERT INTO pr13 SELECT subject, object, predicate FROM yago WHERE predicate='<hasMusicalRole>' ;
+LOAD DATA LOCAL INPATH './tables/predicates/pr13' INTO TABLE yago_part_buck PARTITION (predicate='<hasMusicalRole>');
+DROP TABLE pr13;
+
+DROP TABLE IF EXISTS pr14;
+CREATE TABLE pr14 (subject STRING , object STRING, predicate STRING) ROW FORMAT DELIMITED FIELDS TERMINATED BY ' ' STORED AS TEXTFILE LOCATION './tables/predicates/pr14';
+INSERT INTO pr14 SELECT subject, object, predicate FROM yago WHERE predicate='<isCitizenOf>' ;
+LOAD DATA LOCAL INPATH './tables/predicates/pr14' INTO TABLE yago_part_buck PARTITION (predicate='<isCitizenOf>');
+DROP TABLE pr14;
+
+DROP TABLE IF EXISTS pr15;
+CREATE TABLE pr15 (subject STRING , object STRING, predicate STRING) ROW FORMAT DELIMITED FIELDS TERMINATED BY ' ' STORED AS TEXTFILE LOCATION './tables/predicates/pr15';
+INSERT INTO pr15 SELECT subject, object, predicate FROM yago WHERE predicate='<isMarriedTo>' ;
+LOAD DATA LOCAL INPATH './tables/predicates/pr15' INTO TABLE yago_part_buck PARTITION (predicate='<isMarriedTo>');
+DROP TABLE pr15;
+
+DROP TABLE IF EXISTS pr16;
+CREATE TABLE pr16 (subject STRING , object STRING, predicate STRING) ROW FORMAT DELIMITED FIELDS TERMINATED BY ' ' STORED AS TEXTFILE LOCATION './tables/predicates/pr16';
+INSERT INTO pr16 SELECT subject, object, predicate FROM yago WHERE predicate='<isPoliticianOf>' ;
+LOAD DATA LOCAL INPATH './tables/predicates/pr16' INTO TABLE yago_part_buck PARTITION (predicate='<isPoliticianOf>');
+DROP TABLE pr16;
+
+DROP TABLE IF EXISTS pr17;
+CREATE TABLE pr17 (subject STRING , object STRING, predicate STRING) ROW FORMAT DELIMITED FIELDS TERMINATED BY ' ' STORED AS TEXTFILE LOCATION './tables/predicates/pr17';
+INSERT INTO pr17 SELECT subject, object, predicate FROM yago WHERE predicate='<playsFor>' ;
+LOAD DATA LOCAL INPATH './tables/predicates/pr17' INTO TABLE yago_part_buck PARTITION (predicate='<playsFor>');
+DROP TABLE pr17;
+
+DROP TABLE IF EXISTS pr18;
+CREATE TABLE pr18 (subject STRING , object STRING, predicate STRING) ROW FORMAT DELIMITED FIELDS TERMINATED BY ' ' STORED AS TEXTFILE LOCATION './tables/predicates/pr18';
+INSERT INTO pr18 SELECT subject, object, predicate FROM yago WHERE predicate='<worksAt>' ;
+LOAD DATA LOCAL INPATH './tables/predicates/pr18' INTO TABLE yago_part_buck PARTITION (predicate='<worksAt>');
+DROP TABLE pr18;
+
+DROP TABLE IF EXISTS pr19;
+CREATE TABLE pr19 (subject STRING , object STRING, predicate STRING) ROW FORMAT DELIMITED FIELDS TERMINATED BY ' ' STORED AS TEXTFILE LOCATION './tables/predicates/pr19';
+INSERT INTO pr19 SELECT subject, object, predicate FROM yago WHERE predicate='<wroteMusicFor>' ;
+LOAD DATA LOCAL INPATH './tables/predicates/pr19' INTO TABLE yago_part_buck PARTITION (predicate='<wroteMusicFor>');
+DROP TABLE pr19;
+
+DROP TABLE IF EXISTS pr20;
+CREATE TABLE pr20 (subject STRING , object STRING, predicate STRING) ROW FORMAT DELIMITED FIELDS TERMINATED BY ' ' STORED AS TEXTFILE LOCATION './tables/predicates/pr20';
+INSERT INTO pr20 SELECT subject, object, predicate FROM yago WHERE predicate='<created>' ;
+LOAD DATA LOCAL INPATH './tables/predicates/pr20' INTO TABLE yago_part_buck PARTITION (predicate='<created>');
+DROP TABLE pr20;
+
+DROP TABLE IF EXISTS pr21;
+CREATE TABLE pr21 (subject STRING , object STRING, predicate STRING) ROW FORMAT DELIMITED FIELDS TERMINATED BY ' ' STORED AS TEXTFILE LOCATION './tables/predicates/pr21';
+INSERT INTO pr21 SELECT subject, object, predicate FROM yago WHERE predicate='<diedIn>' ;
+LOAD DATA LOCAL INPATH './tables/predicates/pr21' INTO TABLE yago_part_buck PARTITION (predicate='<diedIn>');
+DROP TABLE pr21;
+
+DROP TABLE IF EXISTS pr22;
+CREATE TABLE pr22 (subject STRING , object STRING, predicate STRING) ROW FORMAT DELIMITED FIELDS TERMINATED BY ' ' STORED AS TEXTFILE LOCATION './tables/predicates/pr22';
+INSERT INTO pr22 SELECT subject, object, predicate FROM yago WHERE predicate='<hasGivenName>' ;
+LOAD DATA LOCAL INPATH './tables/predicates/pr22' INTO TABLE yago_part_buck PARTITION (predicate='<hasGivenName>');
+DROP TABLE pr22;
+
+DROP TABLE IF EXISTS pr23;
+CREATE TABLE pr23 (subject STRING , object STRING, predicate STRING) ROW FORMAT DELIMITED FIELDS TERMINATED BY ' ' STORED AS TEXTFILE LOCATION './tables/predicates/pr23';
+INSERT INTO pr23 SELECT subject, object, predicate FROM yago WHERE predicate='<influences>' ;
+LOAD DATA LOCAL INPATH './tables/predicates/pr23' INTO TABLE yago_part_buck PARTITION (predicate='<influences>');
+DROP TABLE pr23;
+
+DROP TABLE IF EXISTS pr24;
+CREATE TABLE pr24 (subject STRING , object STRING, predicate STRING) ROW FORMAT DELIMITED FIELDS TERMINATED BY ' ' STORED AS TEXTFILE LOCATION './tables/predicates/pr24';
+INSERT INTO pr24 SELECT subject, object, predicate FROM yago WHERE predicate='<isAffiliatedTo>' ;
+LOAD DATA LOCAL INPATH './tables/predicates/pr24' INTO TABLE yago_part_buck PARTITION (predicate='<isAffiliatedTo>');
+DROP TABLE pr24;
+
+DROP TABLE IF EXISTS pr25;
+CREATE TABLE pr25 (subject STRING , object STRING, predicate STRING) ROW FORMAT DELIMITED FIELDS TERMINATED BY ' ' STORED AS TEXTFILE LOCATION './tables/predicates/pr25';
+INSERT INTO pr25 SELECT subject, object, predicate FROM yago WHERE predicate='<isLeaderOf>' ;
+LOAD DATA LOCAL INPATH './tables/predicates/pr25' INTO TABLE yago_part_buck PARTITION (predicate='<isLeaderOf>');
+DROP TABLE pr25;
+
+DROP TABLE IF EXISTS pr26;
+CREATE TABLE pr26 (subject STRING , object STRING, predicate STRING) ROW FORMAT DELIMITED FIELDS TERMINATED BY ' ' STORED AS TEXTFILE LOCATION './tables/predicates/pr26';
+INSERT INTO pr26 SELECT subject, object, predicate FROM yago WHERE predicate='<livesIn>' ;
+LOAD DATA LOCAL INPATH './tables/predicates/pr26' INTO TABLE yago_part_buck PARTITION (predicate='<livesIn>');
+DROP TABLE pr26;
+
+DROP TABLE IF EXISTS pr27;
+CREATE TABLE pr27 (subject STRING , object STRING, predicate STRING) ROW FORMAT DELIMITED FIELDS TERMINATED BY ' ' STORED AS TEXTFILE LOCATION './tables/predicates/pr27';
+INSERT INTO pr27 SELECT subject, object, predicate FROM yago WHERE predicate='<owns>' ;
+LOAD DATA LOCAL INPATH './tables/predicates/pr27' INTO TABLE yago_part_buck PARTITION (predicate='<owns>');
+DROP TABLE pr27;
+
+DROP TABLE IF EXISTS pr28;
+CREATE TABLE pr28 (subject STRING , object STRING, predicate STRING) ROW FORMAT DELIMITED FIELDS TERMINATED BY ' ' STORED AS TEXTFILE LOCATION './tables/predicates/pr28';
+INSERT INTO pr28 SELECT subject, object, predicate FROM yago WHERE predicate='<participatedIn>' ;
+LOAD DATA LOCAL INPATH './tables/predicates/pr28' INTO TABLE yago_part_buck PARTITION (predicate='<participatedIn>');
+DROP TABLE pr28;
+
+DROP TABLE IF EXISTS pr29;
+CREATE TABLE pr29 (subject STRING , object STRING, predicate STRING) ROW FORMAT DELIMITED FIELDS TERMINATED BY ' ' STORED AS TEXTFILE LOCATION './tables/predicates/pr29';
+INSERT INTO pr29 SELECT subject, object, predicate FROM yago WHERE predicate='<wasBornIn>' ;
+LOAD DATA LOCAL INPATH './tables/predicates/pr29' INTO TABLE yago_part_buck PARTITION (predicate='<wasBornIn>');
+DROP TABLE pr29;
+

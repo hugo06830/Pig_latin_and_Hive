@@ -1,0 +1,8 @@
+## Problem1.pig and Problem2h.pig##
+
+
+1.Open the Problem1 or Problem2h.Pig and change the path on the first line to correspond to your yago_full_clean.tsv file
+
+2.Run the command:pig Problem1.pig / pig Problem2h.pig depending on the problem you want to run
+
+3.The solution file will be under "problem1/output" which is created by the pig script

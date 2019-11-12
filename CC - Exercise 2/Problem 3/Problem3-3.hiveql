@@ -1,0 +1,5 @@
+-- Problem 3.3 - Exercise 2 - Group 8 - 2019/2020
+
+CREATE TABLE yago (subject STRING , predicate STRING, object STRING) ROW FORMAT DELIMITED FIELDS TERMINATED BY ' ' STORED AS TEXTFILE LOCATION './tables/yago';
+LOAD DATA LOCAL INPATH '/home/lucas/yago_full_clean.tsv' INTO TABLE yago;
+SELECT ya.subject,ya.object,yad.object FROM yago ya JOIN yago yad ON ((ya.subject == yad.subject) AND (ya.predicate='<hasGivenName>' AND yad.predicate='<livesIn>'));

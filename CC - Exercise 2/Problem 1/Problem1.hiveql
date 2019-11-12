@@ -1,0 +1,4 @@
+-- Problem 1 - Exercise 2 - Group 8 - 2019/2020
+
+CREATE TABLE yago (subject STRING , predicate STRING, object STRING) ROW FORMAT DELIMITED FIELDS TERMINATED BY ' ' LOCATION '/home/lucas/hive/input/';
+SELECT predicate, occurences FROM (SELECT predicate, count(predicate) AS occurences FROM yago GROUP BY predicate) c SORT BY occurences DESC limit 3;

@@ -1,0 +1,4 @@
+-- Problem 2 - Exercise 2 - Group 8 - 2019/2020
+
+CREATE TABLE yago (subject STRING , predicate STRING, object STRING) ROW FORMAT DELIMITED FIELDS TERMINATED BY ' ' LOCATION '/home/lucas/hive/input/';
+SELECT * FROM (SELECT subject AS name, object AS givenname FROM yago WHERE predicate='<hasGivenName>') a JOIN (SELECT subject AS name, object FROM yago WHERE predicate='<livesIn>') b ON (a.name=b.name) JOIN (SELECT subject AS name FROM (SELECT subject, count(object) AS occurences FROM yago GROUP BY subject) c WHERE occurences>2) d ON (b.name=d.name); 

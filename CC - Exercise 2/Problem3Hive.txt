@@ -1,0 +1,9 @@
+# Problem 3 Hive #
+
+1.Open the Problem3-1.hiveql/Problem3-1.hiveq/Problem3-1.hiveq and change the path in the Line LOAD DATA LOCAL INPATH
+
+2.Type !run Problem-3.1.hiveql/Problem-3.2.hiveql/Problem-3.3.hiveql depending on which script you want to run 
+
+1 = Partition + buckets
+2 = Partition
+3 = No partition and no bucket

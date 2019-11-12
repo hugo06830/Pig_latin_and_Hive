@@ -1,0 +1,5 @@
+#Problem 1 and Problem2 Hive#
+
+1.Open the Problem1.hiveql and Problem2.hiveql then change the Path of the file located after the LOCATION statement
+
+2.Run the Problem1.hiveql and Problem2.hiveql on the beeline

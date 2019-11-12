@@ -1,0 +1,7 @@
+-- Problem 3.2 - Exercise 2 - Group 8 - 2019/2020
+
+CREATE TABLE yago (subject STRING , predicate STRING, object STRING) ROW FORMAT DELIMITED FIELDS TERMINATED BY ' ' STORED AS TEXTFILE LOCATION './tables/yago';
+LOAD DATA LOCAL INPATH '/home/lucas/yago_full_clean.tsv' INTO TABLE yago;
+CREATE TABLE yago_part_buck (subject STRING, object STRING) PARTITIONED BY (predicate STRING) ROW FORMAT DELIMITED FIELDS TERMINATED BY ' ' STORED AS TEXTFILE LOCATION './tables/yago_part_buck';
+!run load.hiveql
+SELECT ya.subject,ya.object,yad.object FROM yago_part_buck ya JOIN yago_part_buck yad ON ((ya.subject == yad.subject) AND (ya.predicate='<hasGivenName>' AND yad.predicate='<livesIn>'));
